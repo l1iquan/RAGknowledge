@@ -1,0 +1,18 @@
+{
+  "retrieval_metrics": {
+    "precision@1": 0.0,
+    "precision@3": 0.0,
+    "precision@5": 0.0,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0
+  },
+  "generation_metrics": {
+    "semantic_similarity": 0.8797990083694458
+  },
+  "token_metrics": {
+    "prompt_tokens_mean": 4118.5,
+    "answer_tokens_mean": 278.0,
+    "total_tokens_mean": 4396.5
+  }
+}

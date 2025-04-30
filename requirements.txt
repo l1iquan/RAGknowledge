@@ -1,0 +1,11 @@
+faiss-cpu==1.7.4
+sentence-transformers==2.2.2
+numpy==1.24.3
+tqdm==4.65.0
+openai==0.28.0
+tiktoken==0.4.0
+fastapi==0.100.0
+uvicorn==0.22.0
+python-dotenv==1.0.0
+scikit-learn==1.2.2
+pydantic==2.0.3 
