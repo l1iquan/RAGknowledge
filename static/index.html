@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律知识库问答系统</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1>法律知识库问答系统</h1>
+            <p class="lead">基于 RAG (Retrieval Augmented Generation) 的法律领域问答系统</p>
+        </header>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="card-title h5 mb-0">提问区域</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="question-form">
+                            <div class="mb-3">
+                                <label for="question" class="form-label">请输入您的法律问题：</label>
+                                <textarea class="form-control" id="question" rows="3" placeholder="例如：在不定期合伙的情况下，一个合伙人突然退出并清偿了其应当承担份额的合伙债务后，是否有权向其他合伙人追偿？"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">提交问题</button>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="compare-mode" checked>
+                                    <label class="form-check-label" for="compare-mode">对比模式（同时显示直接LLM回答）</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="text-center my-4 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">加载中...</span>
+            </div>
+            <p class="mt-2">正在处理您的问题，请稍候...</p>
+        </div>
+
+        <div id="results-container" class="d-none">
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h2 class="card-title h5 mb-0">RAG 系统回答</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="rag-answer" class="mb-3"></div>
+                            <hr>
+                            <h3 class="h6">参考文档：</h3>
+                            <div id="references-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="direct-answer-container" class="row d-none">
+                <div class="col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-secondary text-white">
+                            <h2 class="card-title h5 mb-0">直接 LLM 回答（无知识库增强）</h2>
+                        </div>
+                        <div class="card-body">
+                            <div id="direct-answer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center my-4">
+            <p class="text-muted">© 2023 法律知识库问答系统 | 基于 RAG 技术构建</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
